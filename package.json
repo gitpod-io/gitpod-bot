@@ -1,0 +1,38 @@
+{
+  "name": "gitpod-bot",
+  "version": "0.0.0",
+  "description": "Gitpod Bot",
+  "author": "TypeFox <contact@typefox.io> (http://typefox.io)",
+  "license": "ISC",
+  "repository": "https://github.com/gitpod-io/gitpod-bot.git",
+  "homepage": "https://github.com/gitpod-io/gitpod-bot",
+  "bugs": "https://github.com/gitpod-io/gitpod-bot/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "gitpod",
+    "probot-app"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "dev": "nodemon --exec \"npm start\"",
+    "start": "probot run ./lib/index.js",
+    "now-start": "PRIVATE_KEY=$(echo $PRIVATE_KEY_BASE64 | base64 -d) npm start"
+  },
+  "dependencies": {
+    "probot": "^7.0.0",
+    "probot-config": "^0.2.0",
+    "probot-scheduler": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.2",
+    "nodemon": "^1.17.2",
+    "smee-client": "^1.0.2",
+    "typescript": "^3.0.0"
+  },
+  "engines": {
+    "node": "^8.3.0"
+  }
+}
